@@ -1,4 +1,4 @@
-name: "Dagger Export"
+name: "Dagger tests"
 
 on:
   workflow_dispatch:
