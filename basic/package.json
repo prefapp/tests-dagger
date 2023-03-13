@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "exit 0",
-    "build": "ncc --source-map src/index.js"
+    "build": "ncc build --source-map src/index.js"
   },
   "author": "",
   "license": "ISC",
