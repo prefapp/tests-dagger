@@ -2,7 +2,7 @@ import { argv } from "node:process";
 
 import Client, { connect } from "@dagger.io/dagger";
 
-import fs from "fs:node"
+import fs from "fs"
 
 const NODE_IMAGE = "node:18"
 
@@ -14,7 +14,7 @@ connect(async (client) => {
 
   node = node.withWorkdir(HOME_APP_DIR)
 
-  node = node.withMountedDirectory(HOME_APP_DIR, new Client().host().directory('.', {include: ["src", "package.json", "package-lock.json"]})) 
+  node = node.withMountedDirectory(HOME_APP_DIR, new Client().host().directory('.', {include: ["src", "package.json", "package-lock.json", "test"]})) 
 
           .withExec(["npm", "install"])
 
