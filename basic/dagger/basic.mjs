@@ -2,7 +2,7 @@ import { argv } from "node:process";
 
 import Client, { connect } from "@dagger.io/dagger";
 
-import fs from "fs:node"
+import fs from "fs"
 
 const NODE_IMAGE = "node:18"
 
