@@ -1,0 +1,20 @@
+{
+  "name": "dagger-smartlex",
+  "version": "0.1.0",
+  "description": "pipeline de dagger",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@dagger.io/dagger": "^0.3.4",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "js-yaml": "^4.1.0"
+  }
+}
