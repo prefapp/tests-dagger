@@ -13,11 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2     
 
-      - name: "Run Dagger"
+      - name: "Install Dagger"
         uses: dagger/dagger-for-github@v4
         with:
           install-only: true
-      - name: ""
+      - name: "Execute dagger"
         working-directory: ./basic
         run: |
           cd dagger && npm install
