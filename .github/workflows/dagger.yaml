@@ -14,33 +14,7 @@ jobs:
         uses: actions/checkout@v2     
 
       - name: "Run Dagger"
-        uses: dagger/dagger-for-github@v3
-        with:
-          install-only: true
-
-      - name: Dagger proof
+        uses: dagger/dagger-for-github@v4
         working-directory: ./basic
-        env:
-          DEBUG: "sudespacho:*"
-          ECR: ${{ env.registry_url }}
-          DEBUG_DAGGER: ${{ inputs.debug_dagger }}
-        run: |
-          echo ${{ env.version }}
-          echo ${{ inputs.environment }}
-          echo ${{ inputs.servicios }}
-          cd dagger && npm install
-          cd .. && node dagger/build.mjs --servicios ${{ inputs.servicios }} --env ${{ inputs.environment }}  --version ${{ env.version }} 
-          #cd .. && node dagger/build.mjs --flavour vademecum-legal-vite-dev --flavour colex-vite-dev --flavour colex-openaccess-vite-dev --flavour biblioteca-colex-vite-dev --flavour vademecum-legal-vite-pre --flavour campus-opositor-vite-pre --flavour iberley-vite-pre --flavour vademecum-legal-vite-pro --flavour colex-openaccess-vite-pro --flavour biblioteca-colex-vite-pro --flavour campus-opositor-vite-pro --flavour iberley-vite-pro
-          #cd .. && node dagger/build.mjs --flavour colex-openaccess-vite-pre --flavour biblioteca-colex-vite-pre --flavour colex-openaccess-vite-pro
-
-      - name: "Preservar cambios"
-        run:
-          cp .github/deployment.updated.yaml /home/runner/deployments.yaml
-          
-      - name: "Guardar cache"
-        id: cache-save
-        uses: actions/cache/save@v3
-        if: steps.cache-node.outputs.cache-hit != 'true'
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('./yarn.lock') }}
+          cmds: do test
