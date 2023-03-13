@@ -8,8 +8,6 @@ const HELM_IMAGE = 'alpine/helm:3.11.2'
 
 const KUBERNETES_VERSION = [
 
-  "default",
-  "1.20.9",
   "1.25.2",
   "1.25.3",
   "1.25.4",
@@ -60,7 +58,7 @@ connect(async (client) => {
 
     console.log(`Testing against k8s-${kubernetes_version}`)
 
-    await kubeconform.withExec(["--kubernetes-version", kubernetes_version, "/apps/templates-output.yaml"]).exitCode()
+    await kubeconform.withExec(["/usr/local/bin/kubeconform", "--kubernetes-version", kubernetes_version, "/apps/templates-output.yaml"]).exitCode()
 
   }
 

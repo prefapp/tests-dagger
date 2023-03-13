@@ -9,4 +9,3 @@ RUN curl -L -k https://github.com/yannh/kubeconform/releases/download/v0.6.1/kub
   mv kubeconform /usr/local/bin && \
   chmod +x /usr/local/bin/kubeconform
 
-ENTRYPOINT ["/usr/local/bin/kubeconform"]
