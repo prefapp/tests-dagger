@@ -1,0 +1,8 @@
+dagger/node_modules
+
+*.swp
+*.swo
+
+charts/
+
+templates-output.yaml

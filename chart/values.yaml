@@ -1,0 +1,5 @@
+image: nginx
+
+selector:
+  app: helm-dagger-test
+  concern: test-and-demo

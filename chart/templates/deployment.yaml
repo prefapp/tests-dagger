@@ -1,0 +1,13 @@
+{{- define "chart.deployment.data" -}}
+
+name: {{ .Release.Name }}
+
+selector: {{ .Values.selector | toYaml | nindent 2 }}
+
+containers:
+  - name: app
+    image: {{ .Values.image }}
+
+{{- end -}}
+
+{{ include "ph.deployment.render" (include "chart.deployment.data" . | fromYaml )}}
