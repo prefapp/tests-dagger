@@ -1,10 +1,8 @@
-name: "Dagger Export"
+name: "Dagger tests"
 
 on:
   workflow_dispatch:
-    
-env:
-  
+
 jobs:
   build:
     name: "Build"
