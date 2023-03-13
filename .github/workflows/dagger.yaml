@@ -21,4 +21,4 @@ jobs:
         working-directory: ./basic
         run: |
           cd dagger && npm install
-          cd .. && node dagger/build.mjs
+          cd .. && node dagger/basic.mjs
