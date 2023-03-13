@@ -15,6 +15,10 @@ jobs:
 
       - name: "Run Dagger"
         uses: dagger/dagger-for-github@v4
-        working-directory: ./basic
         with:
-          cmds: do test
+          install-only: true
+      - name: ""
+        working-directory: ./basic
+        run: |
+          cd dagger && npm install
+          cd .. && node dagger/build.mjs
