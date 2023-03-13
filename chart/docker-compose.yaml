@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  dagger:
+    image: dagger:dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dagger
+    working_dir: /home/app
+    volumes:
+      - ${PWD}:/home/app
+      - /var/run:/var/run

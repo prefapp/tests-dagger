@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+WORKDIR /opt
+
+RUN apk add curl
+
+RUN curl -L -k https://github.com/yannh/kubeconform/releases/download/v0.6.1/kubeconform-linux-amd64.tar.gz > /opt/kubeconform.tgz && \
+  tar xpvf kubeconform.tgz && \
+  mv kubeconform /usr/local/bin && \
+  chmod +x /usr/local/bin/kubeconform
+
