@@ -1,4 +1,4 @@
-name: "Dagger helm example"
+name: "Dagger flask example"
 
 on:
   workflow_dispatch:
