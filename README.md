@@ -1,6 +1,6 @@
 # tests-dagger
 
-Several examples to test dagger.io. 
+Several examples to test [dagger.io](https://dagger.io/). Check out the [presentation](presentation.pdf) for a deeper understanding of dagger.
 
 ## Basic
 
@@ -21,7 +21,7 @@ A helm chart that allows us to check its output against different versions of th
 To run:
 
 ```
-cd basic
+cd chart
 make init
 make all
 ```
