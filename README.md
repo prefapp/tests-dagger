@@ -21,7 +21,7 @@ A helm chart that allows us to check its output against different versions of th
 To run:
 
 ```
-cd basic
+cd chart
 make init
 make all
 ```
