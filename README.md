@@ -1,6 +1,6 @@
 # tests-dagger
 
-Several examples to test dagger.io. 
+Several examples to test [dagger.io](https://dagger.io/). Check out the [presentation](presentation.pdf) for a deeper understanding of dagger.
 
 ## Basic
 
