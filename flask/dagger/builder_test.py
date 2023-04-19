@@ -25,9 +25,9 @@ async def test_app_exists():
 
         images = await build_images(client)
 
-        appDir = images[0].directory("/app")
-
-        assert(await file_exists(appDir, "app.py"))
+        for i in images:
+            appDir = i.directory("/app")
+            assert(await file_exists(appDir, "app.py"))
 
 @pytest.mark.asyncio
 async def test_secret_does_not_exist():
@@ -36,6 +36,28 @@ async def test_secret_does_not_exist():
 
         images = await build_images(client)
 
-        appDir = images[0].directory("/app")
+        for i in images:
+            appDir = i.directory("/app")
+            assert(await file_exists(appDir, "secret") == False)
 
-        assert(await file_exists(appDir, "secret") == False)
+@pytest.mark.asyncio
+async def test_env_exists():
+
+    async with dagger.Connection(dagger.Config(log_output=sys.stdout)) as client:
+
+        images = await build_images(client)
+
+        for i in images:
+            assert(await i.env_variable("TEST") == "TEST")
+
+
+@pytest.mark.skip(reason="Unexpected behavior")
+async def test_ports():
+
+    async with dagger.Connection(dagger.Config(log_output=sys.stdout)) as client:
+
+        images = await build_images(client)
+
+        for i in images:
+            p = await i.exposed_ports().port()
+            print(p)

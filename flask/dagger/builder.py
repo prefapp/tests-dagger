@@ -24,6 +24,8 @@ async def build_image(client, version):
         .with_mounted_directory(HOME_APP_DIR, src)
         .with_workdir(HOME_APP_DIR)
         .with_exec(["pip", "install", "-r", "requirements.txt"])
+        .with_exposed_port(80)
+        .with_env_variable("TEST", "TEST")
     )
 
     python = (
