@@ -5,7 +5,7 @@ import dagger
 
 async def build_images(client):
 
-    versions = ["3.7", "3.8", "3.9", "3.10", "3.11"]
+    versions = ["3.7", "3.8"]
 
     tasks = [build_image(client, version) for version in versions]
     results = await asyncio.gather(*tasks)
